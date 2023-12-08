@@ -9,6 +9,15 @@
 
      $queryKategori = mysqli_query($con, "SELECT * FROM kategori WHERE id!='$data[kategori_id]'");
 
+     function generateRandomString($length = 10){
+        $charaters = '0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charatersLength = strlen($charaters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $charaters[rand(0, $charatersLength - 1)];
+        }
+        return $randomString;
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -87,10 +96,93 @@
                         ?>
                     </select>
                 </div>
-                <div>
+                <div class="d-flex justify-content-between">
                     <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
+                    <button type="submit" class="btn btn-danger" name="hapus">Hapus</button>
                 </div>
             </form>
+
+            <?php
+                if(isset($_POST['simpan'])){
+                    $nama = htmlspecialchars($_POST['nama']);
+                    $kategori = htmlspecialchars($_POST['kategori']);
+                    $harga = htmlspecialchars($_POST['harga']);
+                    $detail = htmlspecialchars($_POST['detail']);
+                    $ketersediaan_stok = htmlspecialchars($_POST['ketersediaan_stok']);
+
+                $target_dir = "../image/";
+                    $nama_file = basename($_FILES["foto"]["name"]);
+                    $target_file = $target_dir . $nama_file;
+                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                    $image_size = $_FILES["foto"]["size"];
+                    $random_name = generateRandomString(20);
+                    $new_name = $random_name . "." . $imageFileType;
+                    
+                    if($nama=='' || $kategori=='' || $harga==''){
+            ?>
+                        <div class="alert alert-warning mt-3" role="alert">
+                            Nama, kategori dan harga wajib diisi
+                        </div>
+            <?php
+                    }
+                    else{
+                        $queryUpdate = mysqli_query($con, "UPDATE  produk SET kategori_id='$kategori', nama='$nama', harga='$harga', detail='$detail', ketersediaan_stok='$ketersediaan_stok' WHERE id=$id");
+
+                        if($nama_file!=''){
+                            if($image_size > 500000){
+            ?>
+                                <div class="alert alert-warning mt-3" role="alert">
+                                    File tidak boleh lebih dari 500 kb
+                                </div>
+            <?php
+                            }
+                            else{
+                                if ($imageFileType != 'jpg' && $imageFileType != 'png' && $imageFileType != 'gif') {
+            ?>
+                                    <div class="alert alert-warning mt-3" role="alert">
+                                        File wajib bertipe jpg atau png atau gif
+                                    </div>
+            <?php
+                                }
+                                else{
+                                    move_uploaded_file($_FILES["foto"]["tmp_name"], $target_dir . $new_name);
+
+                                    $queryUpdate = mysqli_query($con, "UPDATE produk SET foto='$new_name' WHERE id='$id'");
+
+                                    if($queryUpdate){
+            ?>
+                                        <div class="alert alert-primary mt-3" role="alert">
+                                            Produk Berhasil Diupdate
+                                        </div>
+
+                                         <meta http-equiv="refresh" content="2; url=produk.php"/>
+            <?php
+                                    }
+                                    else{
+                                        echo mysqli_error($con);
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                
+                } 
+
+                if(isset($_POST['hapus'])){
+                    $queryHapus = mysqli_query($con, "DELETE FROM produk WHERE id='$id'");
+
+                    if($queryHapus){
+            ?>
+                        <div class="alert alert-primary mt-3" role="alert">
+                            Produk Berhasil Dihapus
+                        </div>
+
+                        <meta http-equiv="refresh" content="2; url=produk.php" />
+            <?php
+                    }
+                }       
+            ?>
         </div>
     </div>
 

@@ -124,16 +124,16 @@
             <?php
                     }
                     else{
-                        if($nama_file=''){
-                            if($image_size > 500000){
+                        if($nama_file!=''){
+                            if($image_size > 5000000){
             ?>
                                 <div class="alert alert-warning mt-3" role="alert">
-                                    File tidak boleh lebih dari 500 kb
+                                    File tidak boleh lebih dari 5000 kb
                                 </div>
             <?php                   
                             }
                             else{
-                                if($imageFileType != 'jpg' || $imageFileType != 'png' || $imageFileType != 'gif'){
+                                if($imageFileType != 'jpg' && $imageFileType != 'png' && $imageFileType != 'gif'){
             ?>
                                     <div class="alert alert-warning mt-3" role="alert">
                                         File wajib bertipe jpg atau png atau gif
@@ -157,7 +157,7 @@
                             </div>
 
                             <meta http-equiv="refresh" content="2; url=produk.php"/>
-            <?php                
+            <?php  
                         }
                         else{
                             echo mysqli_error($con);

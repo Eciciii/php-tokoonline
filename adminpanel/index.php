@@ -62,7 +62,7 @@
                             <div class="col-6 text-white">
                                 <h3 class="fs-2">Kategori</h3>
                                 <p class="fs-4"><?php echo $jumlahKategori; ?> Kategori</p>
-                                <p><a href="kaategory.php" class="text-white no-decoration"> Lihat Detail</a></p>
+                                <p><a href="kategori.php" class="text-white no-decoration"> Lihat Detail</a></p>
                             </div>
                         </div>
                     </div>
