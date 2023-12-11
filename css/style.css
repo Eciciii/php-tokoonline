@@ -85,4 +85,30 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 8px;
+}
+
+/* tabel */
+.table th,
+.table td {
+  text-align: left;
+}
+
+.table th {
+  width: 30%;
+  background-color: #5f6f52; /* Sesuaikan dengan .warna1 */
+  color: #ffffff;
+}
+
+.table-bordered {
+  border: 2px solid #5f6f52; /* Sesuaikan dengan .warna1 */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fefae0; /* Sesuaikan dengan .warna3 */
+}
+
+.table-info {
+  background-color: #a9b388; /* Sesuaikan dengan .warna2 */
+  color: #ffffff;
 }

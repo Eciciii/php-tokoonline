@@ -22,28 +22,43 @@
 <body>
     <?php require "navbar.php"; ?>
 
-    <!-- Detail Produk -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 mb-5">
-                    <img src="image/<?php echo $produk['foto']; ?>" class="w-100"alt="">
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <h3><?php echo $produk['nama']; ?></h3>
-                    <p class="fs-5">
-                        <?php echo $produk['detail'];?>
-                    </p>
-                    <p class="text-harga">
-                        Rp <?php echo $produk['harga']; ?>
-                    </p>
-                    <p class="fs-5">
-                        Status Ketersediaan : <strong><?php echo $produk['ketersediaan_stok']; ?></strong>
-                    </p>
-                </div>
+<!-- Detail Produk -->
+<div class="container-fluid py-5 warna3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 mb-5">
+                <img src="image/<?php echo $produk['foto']; ?>" class="w-100" alt="">
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="table-info">Nama Produk</th>
+                            <td><?php echo $produk['nama']; ?></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="table-info">Deskripsi</th>
+                            <td><?php echo $produk['detail']; ?></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="table-info">Harga</th>
+                            <td>Rp <?php echo $produk['harga']; ?></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="table-info">Status Ketersediaan</th>
+                            <td>
+                                <strong style="color: <?php echo ($produk['ketersediaan_stok'] == 'Tersedia') ? : 'warna1'; ?>">
+                                    <?php echo $produk['ketersediaan_stok']; ?>
+                                </strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- Produk Terkait -->
     <div class="container-fluid py-5 warna2">
