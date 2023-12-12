@@ -107,8 +107,3 @@
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: #fefae0; /* Sesuaikan dengan .warna3 */
 }
-
-.table-info {
-  background-color: #a9b388; /* Sesuaikan dengan .warna2 */
-  color: #ffffff;
-}

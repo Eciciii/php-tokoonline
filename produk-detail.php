@@ -33,21 +33,21 @@
                     <table class="table table-bordered table-striped">
                         <tbody>
                             <tr>
-                                <th scope="row" class="table-info">Nama Produk</th>
+                                <th scope="row" class="warna2 text-white">Nama Produk</th>
                                 <td><?php echo $produk['nama']; ?></td>
                             </tr>
                             <tr>
-                                <th scope="row" class="table-info">Deskripsi</th>
+                                <th scope="row" class="warna2 text-white">Deskripsi</th>
                                 <td><?php echo $produk['detail']; ?></td>
                             </tr>
                             <tr>
-                                <th scope="row" class="table-info">Harga</th>
+                                <th scope="row" class="warna2 text-white">Harga</th>
                                 <td>Rp <?php echo $produk['harga']; ?></td>
                             </tr>
                             <tr>
-                                <th scope="row" class="table-info">Status Ketersediaan</th>
+                                <th scope="row" class="warna2 text-white">Status Ketersediaan</th>
                                 <td>
-                                    <strong style="color: <?php echo ($produk   ['ketersediaan_stok'] == 'Tersedia') ? : 'warna1'; ?>">
+                                    <strong style="color: <?php echo ($produk   ['ketersediaan_stok'] == 'Tersedia') ? : '#5f6f52'; ?>">
                                         <?php echo $produk['ketersediaan_stok']; ?>
                                     </strong>
                                 </td>
