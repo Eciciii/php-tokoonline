@@ -25,7 +25,7 @@
     <!-- Detail Produk -->
     <div class="container-fluid py-5 warna3">
         <div class="container">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-lg-5 mb-5">
                     <img src="image/<?php echo $produk['foto']; ?>" class="w-100" alt="">
                 </div>

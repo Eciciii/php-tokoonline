@@ -1,6 +1,7 @@
 <?php
     require "koneksi.php";
     $queryProduk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk LIMIT 6");
+    $queryNews = mysqli_query($con, "SELECT id, title, content, created_at FROM news ORDER BY created_at DESC LIMIT 3");
 
 ?>
 
@@ -39,7 +40,7 @@
         <div class="container text-center">
             <h3>Kategori Terlaris</h3>
 
-            <div class="row" mt-5>
+            <div class="row mt-5">
                 <div class="col-md-4 mb-3">
                     <div class="highlighted-kategori kategori-baju-pria d-flex justify-content-center align-items-center">
                         <h4 class="text-white"><a class="no-decoration" href="produk.php?kategori=Baju Pria">Baju Pria</a></h4>
@@ -58,6 +59,33 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Latest News Section -->
+    <div class="container-fluid py-5">
+        <div class="container text-center">
+            <h3>Latest News</h3>
+
+            <div class="row mt-5">
+                <?php
+                $queryNews = mysqli_query($con, "SELECT id, title, content, created_at FROM news ORDER BY created_at DESC LIMIT 3");
+                while ($news = mysqli_fetch_array($queryNews)) {
+                ?>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title warna1 text-white py-2"><?php echo $news['title']; ?></h4>
+                                <p class="card-text"><?php echo $news['content']; ?></p>
+                                <p class="card-text"><small class="text-muted">Posted on <?php echo $news['created_at']; ?></small></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Tentang Kami -->
     <div class="container-fluid warna3 py-5">

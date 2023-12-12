@@ -8,7 +8,7 @@
 </head>
 <body style="background-color: #f5f5f5;">
 
-<nav class="navbar navbar-expand-lg navbar-dark warna1">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark warna1">
     <div class="container">
         <a class="navbar-brand" href="#">Toko Online</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
