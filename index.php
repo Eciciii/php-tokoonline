@@ -60,6 +60,13 @@
         </div>
     </div>
 
+    <!-- Tentang Kami -->
+    <div class="container-fluid warna3 py-5">
+        <div class="container text-center">
+            <h3>Tentang Kami</h3>
+            <p class="fs-5 mt-3">Selamat datang di Toko Online, tempat di mana kami menghadirkan pengalaman belanja online yang tak terlupakan. Sejak tahun 2023, kami berkomitmen untuk memberikan layanan terbaik dan produk berkualitas tinggi kepada pelanggan kami. Dengan fokus pada inovasi dan kepuasan pelanggan, Toko Online hadir sebagai destinasi utama untuk memenuhi kebutuhan belanja online Anda. Kami bangga menjadi bagian dari komunitas yang dinamis dan berkembang pesat, dan terus berusaha menjadi mitra terpercaya dalam memenuhi kebutuhan belanja Anda.</p>
+        </div>
+    </div>
 
     <!-- Latest News Section -->
     <div class="container-fluid py-5">
@@ -82,16 +89,6 @@
                     </div>
                 <?php } ?>
             </div>
-        </div>
-    </div>
-
-
-
-    <!-- Tentang Kami -->
-    <div class="container-fluid warna3 py-5">
-        <div class="container text-center">
-            <h3>Tentang Kami</h3>
-            <p class="fs-5 mt-3">Selamat datang di Toko Online, tempat di mana kami menghadirkan pengalaman belanja online yang tak terlupakan. Sejak tahun 2023, kami berkomitmen untuk memberikan layanan terbaik dan produk berkualitas tinggi kepada pelanggan kami. Dengan fokus pada inovasi dan kepuasan pelanggan, Toko Online hadir sebagai destinasi utama untuk memenuhi kebutuhan belanja online Anda. Kami bangga menjadi bagian dari komunitas yang dinamis dan berkembang pesat, dan terus berusaha menjadi mitra terpercaya dalam memenuhi kebutuhan belanja Anda.</p>
         </div>
     </div>
 
